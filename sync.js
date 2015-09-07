@@ -31,20 +31,19 @@ connection.query('SELECT \
     case\
         when\
             charity_ein IS NOT NULL\
-                AND charity_ein <> ''\
+                AND charity_ein <> ""\
                 AND charity_nfg_opt_out = 0\
                 AND charity_nfg_fails = 0\
-                AND charity_subsection_code = '03'\
-        THEN\
+                AND charity_subsection_code = "03"\
+        then\
             true\
-        ELSE false\
-    END AS nfg_eligible\
-FROM\
-    gopro.p4p_charities', function(err, rows, fields) {
-  if (err) throw err;
- 
-  console.log('The solution is: ', fields);
-});
+        else false\
+    end AS nfg_eligible\
+    from p4p_charities', 
+    function(err, rows, fields) {
+        if (err) throw err;
+        console.log('The solution is: ', fields);
+    });
 
 
 // build batch shell
@@ -59,22 +58,22 @@ FROM\
 
 // update datetime
 
-var search = function(dir, needle) {
-  if(!fs.existsSync(dir)) {
-    return console.log('Directory ' + dir + ' does not exist.');
-  }
+// var search = function(dir, needle) {
+//   if(!fs.existsSync(dir)) {
+//     return console.log('Directory ' + dir + ' does not exist.');
+//   }
   
-var haystack = fs.readdirSync(dir), path, stats;
-  for(var s = 0; s < haystack.length; s++) {
-    path = dir + '/' + haystack[s];
-    stats = fs.statSync(path);
+// var haystack = fs.readdirSync(dir), path, stats;
+//   for(var s = 0; s < haystack.length; s++) {
+//     path = dir + '/' + haystack[s];
+//     stats = fs.statSync(path);
     
-if(stats.isDirectory()) {
-      search(path, needle);
-    } else if(path.indexOf(needle) >= 0) {
-      console.log(path);
-    }
-  }
-};
+// if(stats.isDirectory()) {
+//       search(path, needle);
+//     } else if(path.indexOf(needle) >= 0) {
+//       console.log(path);
+//     }
+//   }
+// };
 
-search(process.argv[2], process.argv[3]);
+// search(process.argv[2], process.argv[3]);

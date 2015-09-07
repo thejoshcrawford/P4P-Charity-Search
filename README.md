@@ -31,7 +31,7 @@ SELECT
         ELSE false
     END AS nfg_eligible
 FROM
-    gopro.p4p_charities
+    p4p_charities
 ```
 1.  Export data as csv or json
 1.  Partition data in 5MB chunks
