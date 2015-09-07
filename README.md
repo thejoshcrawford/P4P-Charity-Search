@@ -46,3 +46,7 @@ how to get data in programatically
 
 post updates with cron
 
+Setup and Start Sync
+1.  Setup Config - http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
+  *  Configure instance to use IAM roles or
+  *  Create shared credentials file ~/.aws/credentials 

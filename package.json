@@ -1,0 +1,17 @@
+{
+  "name": "p4p_charity_sync",
+  "version": "1.0.0",
+  "description": "Search Endpoint: search-p4p-search2-ral7jaq7affid657aaekpon5vu.us-east-1.cloudsearch.amazonaws.com",
+  "main": "sync.js",
+  "dependencies": {
+    "aws-sdk": "^2.1.49",
+    "mysql": "^2.9.0",
+    "fs": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh Crawford",
+  "license": "ISC"
+}
